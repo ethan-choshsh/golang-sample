@@ -4,8 +4,12 @@ on:
   workflow_dispatch:
     environment:
       description: "배포 환경 선택"
-      type: environment
+      type: choice
       required: true
+      options:
+        - prod
+        - staging
+        - qa
 
 jobs:
   deploy_manually:
