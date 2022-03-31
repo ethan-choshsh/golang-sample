@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    # if: github.repository == 'octo-org/octo-repo-prod'
+    if: ${{ github.actor == 'choshsh' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
