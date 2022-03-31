@@ -1,0 +1,24 @@
+name: Go
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  deploy:
+    # if: github.repository == 'octo-org/octo-repo-prod'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: View actor
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(context.actor)
+
+      - name: View context attributes
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(context)

@@ -2,13 +2,12 @@ name: Go
 
 on:
   push:
-    branches: [ master ]
-    paths-ignore: [ '.github/**', '.gitignore' ]
+    branches: [master]
+    paths-ignore: [".github/**", ".gitignore"]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -27,5 +26,3 @@ jobs:
 
       - name: Build
         run: go build -v -o bin ./...
-
-
