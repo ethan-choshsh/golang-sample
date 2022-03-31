@@ -1,0 +1,45 @@
+name: Deploy prod manually
+
+on:
+  workflow_dispatch:
+    environment:
+      description: "배포 환경 선택"
+      type: environment
+      required: true
+
+jobs:
+  deploy_manually:
+    if: ${{ github.actor == 'choshsh' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: View actor
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(context.actor)
+
+      - name: View context attributes
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(context)
+
+      - name: Build
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log('Frontend Build')
+
+      - name: Upload file to S3
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log('Upload')
+
+      - name: Invalid CloudFront Cache
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log('Create Invalidation')
