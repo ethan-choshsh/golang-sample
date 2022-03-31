@@ -11,10 +11,6 @@ on:
           - prod
           - staging
           - qa
-      environment2:
-        description: "배포 환경 선택-테스트"
-        type: environment
-        required: true
 
 jobs:
   deploy_manually:
