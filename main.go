@@ -19,6 +19,8 @@ func GetPolarisshare() (int, string) {
 		log.Fatal(err)
 	}
 
+	fmt.Println(112312312312)
+
 	// Print header
 	header, err := json.MarshalIndent(res.Header, "", "    ")
 	if err != nil {
