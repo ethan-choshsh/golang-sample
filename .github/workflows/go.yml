@@ -10,12 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push ' || startsWith(github.head_ref, 'd') }}
     steps:
       - uses: actions/checkout@v2
       
       - name: pr test
         run: |
-          echo ${{ github.ref_name }}
           echo ${{ github.head_ref }}
           echo ${{ github.base_ref }}
           echo ${{ startsWith(github.head_ref, 'd') }}
