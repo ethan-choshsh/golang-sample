@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: pr test
+        run: echo "${{ github.ref_name }} ${{ github.head_ref }}"
 
       - name: Set up Go
         uses: actions/setup-go@v2
