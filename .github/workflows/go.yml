@@ -18,7 +18,7 @@ jobs:
           echo ${{ github.ref_name }}
           echo ${{ github.head_ref }}
           echo ${{ github.base_ref }}
-          echo ${{ startsWith(head_ref, 'd') }}
+          echo ${{ startsWith(github.head_ref, 'd') }}
 
       - name: Set up Go
         uses: actions/setup-go@v2
