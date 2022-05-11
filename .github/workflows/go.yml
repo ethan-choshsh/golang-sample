@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push ' || startsWith(github.head_ref, 'd') }}
+    if: ${{ github.event_name == 'push' || startsWith(github.head_ref, 'd') }}
     steps:
       - uses: actions/checkout@v2
       
