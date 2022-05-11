@@ -14,7 +14,11 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: pr test
-        run: echo "${{ github.ref_name }} ${{ github.head_ref }}"
+        run: |
+          echo ${{ github.ref_name }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.base_ref }}
+          echo ${{ startsWith(head_ref, 'd') }}
 
       - name: Set up Go
         uses: actions/setup-go@v2
